@@ -26,7 +26,7 @@ const DemoElements = () => {
           <DemoContent1>
             <DemoImage src={demo} type="image/svg" />
             <DemoButtons>
-              <DesktopDemoBtn to="/AppDemo">Desktop Demo</DesktopDemoBtn>
+              <DesktopDemoBtn to="/AppDemo">App Demo</DesktopDemoBtn>
               {/* eslint-disable-next-line */}
               <a
                 target="_blank"

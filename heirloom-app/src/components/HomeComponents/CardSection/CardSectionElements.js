@@ -37,7 +37,7 @@ export const FeatureH2 = styled.h2`
   font-size: 7vw;
   line-height: 7.5vw;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     font-size: 5vw;
     line-height: 5.5vw;
     margin-left: 3.5vw;

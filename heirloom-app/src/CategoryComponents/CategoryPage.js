@@ -6,14 +6,23 @@ import {
   CategoryContainer,
 } from "./CategoryPageElements";
 
-const CategoryPage = ({ filteredList }) => {
+const CategoryPage = ({ filteredList, catTitle }) => {
   return (
     <>
       <PageContainer>
-        <PageTitle>Title</PageTitle>
+        <PageTitle>{catTitle}</PageTitle>
         <CategoryContainer filteredList={filteredList}>
           {filteredList.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              title={recipe.title}
+              recipeImg={recipe.recipeImg}
+              type={recipe.type}
+              starRating={recipe.starRating}
+              servingSize={recipe.servingSize}
+              source={recipe.source}
+            />
           ))}
         </CategoryContainer>
       </PageContainer>

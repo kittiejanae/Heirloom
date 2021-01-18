@@ -47,7 +47,8 @@ export const CookBookHeader = styled(Link)`
 export const CookBookList = styled.ul`
   list-style: none;
   text-align: left;
-  margin-left: -6vw;
+  margin-left: -4vw;
+  margin-top: 1vw;
 `;
 
 export const CookbookListItem = styled(Link)`
@@ -75,10 +76,11 @@ export const CookbookListItem = styled(Link)`
 
 export const FunctionList = styled.ul`
   list-style: none;
-  margin-left: -6.25vw;
+  margin-left: -4.25vw;
+  margin-top: 1vw;
 `;
 
-export const FunctionListItem = styled.li`
+export const FunctionListItem = styled.button`
   font-family: BalooTamma2-Regular;
   font-style: normal;
   font-weight: normal;
@@ -91,11 +93,18 @@ export const FunctionListItem = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border: none;
+  background: none;
+  padding: 0;
 
   &:hover {
     transform: scale(1.02);
     tranisition: all 0.2 ease-in-out;
     cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 

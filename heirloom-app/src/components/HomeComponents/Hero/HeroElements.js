@@ -9,7 +9,6 @@ export const HeroContainer = styled.div`
   margin-bottom: 0;
   height: 800 px;
   position: relative;
-  z-index: 1;
   font-family: Arial;
 `;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SearchContainer,
   SearchbarContainer,
@@ -8,52 +8,47 @@ import {
 } from "./SearchCompElements";
 import SearchIcon from "../../images/SearchIcon.png";
 import RecipeCard from "../Recipes/RecipeCard";
+import { GlobalStyle } from "../../Modal/globalStyles";
+import { Modal } from "../../Modal/Modal";
 
-// const myCreationCardStyle = {
-//   background: "red",
-// };
+function SearchComp({ filteredList, handleSearch, searchList }) {
+  const [showModal, setShowModal] = useState(false);
 
-// const familyCardStyle = {
-//   background: "green",
-// };
-
-// const stolenCardStyle = {
-//   background: "blue",
-// };
-
-// const cardStyling = this.recipes.map((recipe) => {
-//   if (recipe.source === "My Creation") {
-//     style = { myCreationCardStyle };
-//   }
-//   if (recipe.source === "Family Recipe") {
-//     style = { familyCardStyle };
-//   }
-//   if (recipe.source === "Stolen Recipe") {
-//     style = { stolenCardStyle };
-//   }
-// });
-
-const SearchComp = ({ filteredList, handleSearch }) => {
-  // const [searchTerm, setSearchTerm] = useState("");
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <>
       <SearchContainer>
         <SearchbarContainer
-          value=""
+          value={searchList}
           type="text"
-          onChange={() => handleSearch()}
+          onChange={handleSearch}
         ></SearchbarContainer>
         <Img src={SearchIcon} type="image/png" />
         <ResultsContainer filteredList={filteredList}>
           {filteredList.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
+            // <RecipeCard key={recipe.id} recipe={recipe} />
+            <RecipeCard
+              key={recipe.id}
+              title={recipe.title}
+              recipeImg={recipe.recipeImg}
+              type={recipe.type}
+              starRating={recipe.starRating}
+              servingSize={recipe.servingSize}
+              source={recipe.source}
+              locked={recipe.locked}
+              onClick={openModal}
+            />
           ))}
         </ResultsContainer>
       </SearchContainer>
-      <AddButton>Add A New Recipe</AddButton>
+      <AddButton onClick={openModal}>+</AddButton>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <GlobalStyle />
     </>
   );
-};
+}
 
 export default SearchComp;

@@ -1,12 +1,14 @@
 import React from "react";
 import { HeaderContainer, LogoContainer, Logo } from "./HeaderElements";
 
-const Header = () => {
+const Header = ({ handleHomeReset }) => {
   return (
     <>
       <HeaderContainer>
         <LogoContainer>
-          <Logo to="/AppDemo">Heirloom</Logo>
+          <Logo to="/AppDemo" onClick={handleHomeReset}>
+            Heirloom
+          </Logo>
         </LogoContainer>
       </HeaderContainer>
     </>

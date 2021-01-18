@@ -53,6 +53,10 @@ export const ExitContainer = styled(Link)`
     outline: none;
   }
 
+  &:hover {
+    background: #ffdb0e;
+  }
+
   @media screen and (min-width: 768px) {
     width: 72%;
     height: 3vw;
@@ -71,4 +75,9 @@ export const ExitH3 = styled.h3`
   letter-spacing: 0.035em;
   text-transform: uppercase;
   color: black;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 2vw;
+  }
 `;

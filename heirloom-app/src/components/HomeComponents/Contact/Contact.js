@@ -11,20 +11,30 @@ import {
 } from "./ContactElements";
 import contact from "../../../images/contact.svg";
 
-const emailInfo = document.getElementsByClassName("emailInput");
-const messageInfo = document.getElementsByClassName("messageInput");
+function Contact() {
+  function resetForm() {
+    let email = document.querySelector(".emailInput");
+    let message = document.querySelector(".messageInput");
 
-function onSubmit(event) {
-  event.preventDefault();
+    email.value = "";
+    message.value = "";
+    // let resetForm = document.querySelector("button");
+    // let inputs = document.querySelectorAll("inputs");
 
-  let outputStr = `Thanks for your message!`;
-  alert(outputStr);
+    // resetForm.addEventListener("click", () => {
+    //   inputs.forEach((input) => (input.value = ""));
+    // });
+  }
 
-  emailInfo.reset();
-  messageInfo.reset();
-}
+  function onSubmit(event) {
+    event.preventDefault();
 
-const Contact = () => {
+    let outputStr = `Thanks for your message!`;
+    alert(outputStr);
+
+    resetForm();
+  }
+
   return (
     <>
       <ContactContainer className="contact">
@@ -35,12 +45,14 @@ const Contact = () => {
             <EmailInput
               className="emailInput"
               type="text"
+              name="email"
               placeholder=" Email Address"
               required
             />
             <MessageInput
               className="messageInput"
               type="text"
+              name="message"
               placeholder=" Write Your Message Here"
               required
             />
@@ -52,6 +64,6 @@ const Contact = () => {
       </ContactContainer>
     </>
   );
-};
+}
 
 export default Contact;

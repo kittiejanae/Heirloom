@@ -8,6 +8,7 @@ export const DesktopProfileContainer = styled(Link)`
   top: 30px;
   z-index: 1;
   position: absolute;
+  margin-top: 1.5vw;
 
   @media screen and (min-width: 768px) {
     right: 3vw;
@@ -16,6 +17,7 @@ export const DesktopProfileContainer = styled(Link)`
     height: 6vw;
     z-index: 1;
     position: fixed;
+    margin-top: 0;
   }
 
   &:hover {

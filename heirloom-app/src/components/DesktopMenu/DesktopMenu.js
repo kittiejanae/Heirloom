@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import NewRecipeIcon from "../../images/NewRecipeIcon.png";
 import SettingsIcon from "../../images/SettingsIcon.png";
+import { GlobalStyle } from "../../Modal/globalStyles";
+import { Modal } from "../../Modal/Modal";
 import {
   DesktopMenuContainer,
   CookBookMenuContainer,
@@ -13,59 +15,111 @@ import {
   FunctionName,
 } from "./DesktopMenuElements";
 
-const DesktopMenu = ({ handleAppetizer }) => {
+function DesktopMenu({
+  handleAppetizer,
+  handleSoup,
+  handleSalad,
+  handleSides,
+  handleMains,
+  handleDipsSauces,
+  handleDesserts,
+  handleDrinks,
+  handleMiscellaneous,
+  handleReset,
+}) {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
   return (
     <>
       <DesktopMenuContainer>
         <CookBookMenuContainer>
-          <CookBookHeader to="/AppDemo">Sam's Cookbook</CookBookHeader>
+          <CookBookHeader to="/Category" onClick={handleReset}>
+            Sam's Cookbook
+          </CookBookHeader>
           <CookBookList>
             <CookbookListItem
               className="Appetizer"
               to="/Category"
-              onClick={() => handleAppetizer()}
+              onClick={handleAppetizer}
             >
               Appetizer
             </CookbookListItem>
-            <CookbookListItem className="Soup" to="/Category">
+            <CookbookListItem
+              className="Soup"
+              to="/Category"
+              onClick={handleSoup}
+            >
               Soup
             </CookbookListItem>
-            <CookbookListItem className="Salad" to="/Category">
+            <CookbookListItem
+              className="Salad"
+              to="/Category"
+              onClick={handleSalad}
+            >
               Salad
             </CookbookListItem>
-            <CookbookListItem className="Sides" to="/Category">
+            <CookbookListItem
+              className="Sides"
+              to="/Category"
+              onClick={handleSides}
+            >
               Sides
             </CookbookListItem>
-            <CookbookListItem className="Mains" to="/Category">
+            <CookbookListItem
+              className="Mains"
+              to="/Category"
+              onClick={handleMains}
+            >
               Mains
             </CookbookListItem>
-            <CookbookListItem className="DipsNSauces" to="/Category">
+            <CookbookListItem
+              className="DipsNSauces"
+              to="/Category"
+              onClick={handleDipsSauces}
+            >
               Dips & Sauces
             </CookbookListItem>
-            <CookbookListItem className="Desserts" to="/Category">
+            <CookbookListItem
+              className="Desserts"
+              to="/Category"
+              onClick={handleDesserts}
+            >
               Desserts
             </CookbookListItem>
-            <CookbookListItem className="Drinks" to="/Category">
+            <CookbookListItem
+              className="Drinks"
+              to="/Category"
+              onClick={handleDrinks}
+            >
               Drinks
             </CookbookListItem>
-            <CookbookListItem className="Miscellaneous" to="/Category">
+            <CookbookListItem
+              className="Miscellaneous"
+              to="/Category"
+              onClick={handleMiscellaneous}
+            >
               Miscellaneous
             </CookbookListItem>
           </CookBookList>
           <FunctionList>
-            <FunctionListItem>
+            <FunctionListItem onClick={openModal}>
               <FunctionIcon src={NewRecipeIcon} type="image/png" />
               <FunctionName>Add A New Recipe</FunctionName>
             </FunctionListItem>
-            <FunctionListItem>
+            <FunctionListItem onClick={openModal}>
               <FunctionIcon src={SettingsIcon} type="image/png" />
               <FunctionName>Settings</FunctionName>
             </FunctionListItem>
           </FunctionList>
         </CookBookMenuContainer>
       </DesktopMenuContainer>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <GlobalStyle />
     </>
   );
-};
+}
 
 export default DesktopMenu;

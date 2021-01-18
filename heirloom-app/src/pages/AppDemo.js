@@ -11,6 +11,7 @@ class AppDemo extends Component {
   state = {
     recipeData: recipeData,
     filteredList: recipeData,
+    searchText: "",
   };
 
   fiveStarFilter = () => {
@@ -49,19 +50,99 @@ class AppDemo extends Component {
   };
 
   handleSearch = (event) => {
-    const searchList = recipeData.filter(
-      (recipe) => recipe.ingredients === event.target.value
+    this.setState({ searchText: event.target.value }, () => {
+      const searchList = recipeData.filter((recipe) =>
+        this.searchFn(recipe, this.state.searchText)
+      );
+      this.setState({ filteredList: searchList });
+    });
+  };
+
+  searchFn = (recipe, searchText) => {
+    return (
+      recipe.title.toLowerCase().includes(searchText.toLowerCase()) ||
+      recipe.ingredients.some((ingredient) =>
+        ingredient.toLowerCase().includes(searchText.toLowerCase())
+      )
     );
-    this.setState({ filteredList: searchList });
+  };
+
+  handleAppetizer = () => {
+    const appetizerList = recipeData.filter(
+      (recipe) => recipe.type === "Appetizer"
+    );
+
+    this.setState({ filteredList: appetizerList });
+  };
+
+  handleSoup = () => {
+    const soupList = recipeData.filter((recipe) => recipe.type === "Soup");
+
+    this.setState({ filteredList: soupList });
+  };
+
+  handleSalad = () => {
+    const saladList = recipeData.filter((recipe) => recipe.type === "Salad");
+
+    this.setState({ filteredList: saladList });
+  };
+
+  handleSides = () => {
+    const sidesList = recipeData.filter((recipe) => recipe.type === "Sides");
+
+    this.setState({ filteredList: sidesList });
+  };
+
+  handleMains = () => {
+    const mainsList = recipeData.filter((recipe) => recipe.type === "Mains");
+
+    this.setState({ filteredList: mainsList });
+  };
+
+  handleDipsSauces = () => {
+    const dipsSaucesList = recipeData.filter(
+      (recipe) => recipe.type === "Dips & Sauces"
+    );
+
+    this.setState({ filteredList: dipsSaucesList });
+  };
+
+  handleDesserts = () => {
+    const dessertsList = recipeData.filter(
+      (recipe) => recipe.type === "Desserts"
+    );
+
+    this.setState({ filteredList: dessertsList });
+  };
+
+  handleMiscellaneous = () => {
+    const miscellaneousList = recipeData.filter(
+      (recipe) => recipe.type === "Miscellaneous"
+    );
+
+    this.setState({ filteredList: miscellaneousList });
+  };
+
+  handleHomeReset = () => {
+    this.setState({ filteredList: recipeData });
   };
 
   render() {
     return (
       <>
         <CloseDemo />
-        <Header />
+        <Header handleHomeReset={this.handleHomeReset} />
         <Profile />
-        <DesktopMenu />
+        <DesktopMenu
+          handleAppetizer={this.handleAppetizer}
+          handleSoup={this.handleSoup}
+          handleSides={this.handleSides}
+          handleMains={this.handleMains}
+          handleDipsSauces={this.handleDipsSauces}
+          handleDesserts={this.handleDesserts}
+          handleDrinks={this.handleDrinks}
+          handleMiscellaneous={this.handleMiscellaneous}
+        />
         <SearchCategories
           recipeData={this.state.recipeData}
           fiveStarFilter={this.fiveStarFilter}
@@ -72,6 +153,7 @@ class AppDemo extends Component {
         />
         <SearchComp
           filteredList={this.state.filteredList}
+          searchList={this.state.searchList}
           handleSearch={this.handleSearch}
         />
       </>
