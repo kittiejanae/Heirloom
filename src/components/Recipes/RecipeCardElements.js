@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -11,6 +12,8 @@ export const Container = styled.div`
   margin-bottom: 3vw;
   height: 150px;
   padding: 0;
+  text-decoration: none;
+  color: black;
 
   @media screen and (min-width: 768px) {
     height: 200px;
@@ -38,6 +41,7 @@ export const Name = styled.h3`
   line-height: 2.8vw;
   text-align: left;
   margin-left: 1vw;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     font-size: 1.5vw;

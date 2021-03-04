@@ -18,12 +18,6 @@ function Contact() {
 
     email.value = "";
     message.value = "";
-    // let resetForm = document.querySelector("button");
-    // let inputs = document.querySelectorAll("inputs");
-
-    // resetForm.addEventListener("click", () => {
-    //   inputs.forEach((input) => (input.value = ""));
-    // });
   }
 
   function onSubmit(event) {

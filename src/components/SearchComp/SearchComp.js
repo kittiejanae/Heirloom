@@ -32,6 +32,7 @@ function SearchComp({ filteredList, handleSearch, searchList }) {
             // <RecipeCard key={recipe.id} recipe={recipe} />
             <RecipeCard
               key={recipe.id}
+              id={recipe.id}
               title={recipe.title}
               recipeImg={recipe.recipeImg}
               type={recipe.type}
@@ -39,7 +40,6 @@ function SearchComp({ filteredList, handleSearch, searchList }) {
               servingSize={recipe.servingSize}
               source={recipe.source}
               locked={recipe.locked}
-              onClick={openModal}
             />
           ))}
         </ResultsContainer>

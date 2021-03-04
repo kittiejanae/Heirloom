@@ -115,12 +115,14 @@ class Category extends Component {
           {this.state.filteredList.map((recipe) => (
             <RecipeCard
               key={recipe.id}
+              id={recipe.id}
               title={recipe.title}
               recipeImg={recipe.recipeImg}
               type={recipe.type}
               starRating={recipe.starRating}
               servingSize={recipe.servingSize}
               source={recipe.source}
+              locked={recipe.locked}
             />
           ))}
         </CategoryPage>

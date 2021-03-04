@@ -45,6 +45,7 @@ const RecipeCard = (props) => {
   //     return <Lock src={lockImage} type="image/svg" />;
   //   }
   // }
+  console.log(props);
 
   return (
     <>
@@ -53,6 +54,7 @@ const RecipeCard = (props) => {
           border: `3px solid ${handleBorderColor()}`,
           boxShadow: `2px 5px 13px -5px ${handleBorderColor()}`,
         }}
+        to={`/${props.id}`}
       >
         <NameWrapper
           style={{

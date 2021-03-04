@@ -56,7 +56,9 @@ const recipes = [
       "For the ponzu sauce, combine gelatin powder, warm water, sudachi juice, soy sauce, mirin, and chicken broth. Mix thoroughly and place aside to chill.",
       "When the terrine finishes baking, remove and let cool. Place in refrigerator to chill. Once chilled, remove the terrine and cut off a slice from either end. Plate with your two sauces in a circular swirl around as well as some garnish.",
     ],
-    notes: [""],
+    notes: [
+      "Contains a hidden secret, thanks to the effects of the allspice added to it, it gives a warm feeling to one's soul, as if walking with one's mother under a rainbow on a sunny day.",
+    ],
   },
   {
     id: 2,

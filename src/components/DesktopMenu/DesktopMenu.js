@@ -14,6 +14,7 @@ import {
   FunctionIcon,
   FunctionName,
 } from "./DesktopMenuElements";
+import { withRouter } from "react-router-dom";
 
 function DesktopMenu({
   handleAppetizer,
@@ -26,12 +27,14 @@ function DesktopMenu({
   handleDrinks,
   handleMiscellaneous,
   handleReset,
+  match,
 }) {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
+  console.log(match);
   return (
     <>
       <DesktopMenuContainer>
@@ -39,71 +42,69 @@ function DesktopMenu({
           <CookBookHeader to="/Category" onClick={handleReset}>
             Sam's Cookbook
           </CookBookHeader>
-          <CookBookList>
-            <CookbookListItem
-              className="Appetizer"
-              to="/Category"
-              onClick={handleAppetizer}
-            >
-              Appetizer
-            </CookbookListItem>
-            <CookbookListItem
-              className="Soup"
-              to="/Category"
-              onClick={handleSoup}
-            >
-              Soup
-            </CookbookListItem>
-            <CookbookListItem
-              className="Salad"
-              to="/Category"
-              onClick={handleSalad}
-            >
-              Salad
-            </CookbookListItem>
-            <CookbookListItem
-              className="Sides"
-              to="/Category"
-              onClick={handleSides}
-            >
-              Sides
-            </CookbookListItem>
-            <CookbookListItem
-              className="Mains"
-              to="/Category"
-              onClick={handleMains}
-            >
-              Mains
-            </CookbookListItem>
-            <CookbookListItem
-              className="DipsNSauces"
-              to="/Category"
-              onClick={handleDipsSauces}
-            >
-              Dips & Sauces
-            </CookbookListItem>
-            <CookbookListItem
-              className="Desserts"
-              to="/Category"
-              onClick={handleDesserts}
-            >
-              Desserts
-            </CookbookListItem>
-            <CookbookListItem
-              className="Drinks"
-              to="/Category"
-              onClick={handleDrinks}
-            >
-              Drinks
-            </CookbookListItem>
-            <CookbookListItem
-              className="Miscellaneous"
-              to="/Category"
-              onClick={handleMiscellaneous}
-            >
-              Miscellaneous
-            </CookbookListItem>
-          </CookBookList>
+          {match.path === "/Category" && (
+            <CookBookList>
+              <CookbookListItem
+                className="Appetizer"
+                to="/Category"
+                onClick={handleAppetizer}
+              >
+                Appetizer
+              </CookbookListItem>
+              <CookbookListItem
+                className="Soup"
+                to="/Category"
+                onClick={handleSoup}
+              >
+                Soup
+              </CookbookListItem>
+              <CookbookListItem className="Salad" onClick={handleSalad}>
+                Salad
+              </CookbookListItem>
+              <CookbookListItem
+                className="Sides"
+                to="/Category"
+                onClick={handleSides}
+              >
+                Sides
+              </CookbookListItem>
+              <CookbookListItem
+                className="Mains"
+                to="/Category"
+                onClick={handleMains}
+              >
+                Mains
+              </CookbookListItem>
+              <CookbookListItem
+                className="DipsNSauces"
+                to="/Category"
+                onClick={handleDipsSauces}
+              >
+                Dips & Sauces
+              </CookbookListItem>
+              <CookbookListItem
+                className="Desserts"
+                to="/Category"
+                onClick={handleDesserts}
+              >
+                Desserts
+              </CookbookListItem>
+              <CookbookListItem
+                className="Drinks"
+                to="/Category"
+                onClick={handleDrinks}
+              >
+                Drinks
+              </CookbookListItem>
+              <CookbookListItem
+                className="Miscellaneous"
+                to="/Category"
+                onClick={handleMiscellaneous}
+              >
+                Miscellaneous
+              </CookbookListItem>
+            </CookBookList>
+          )}
           <FunctionList>
             <FunctionListItem onClick={openModal}>
               <FunctionIcon src={NewRecipeIcon} type="image/png" />
@@ -122,4 +123,4 @@ function DesktopMenu({
   );
 }
 
-export default DesktopMenu;
+export default withRouter(DesktopMenu);
