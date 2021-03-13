@@ -6,6 +6,11 @@ export const RpImageDiv = styled.div`
   margin: 0vw;
   padding: 0;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: 72%;
+    height: 25vw;
+  }
 `;
 
 export const RpImage = styled.img`
@@ -13,12 +18,21 @@ export const RpImage = styled.img`
   height: 50vw;
   margin: 0vw;
   padding: 0;
+
+  @media screen and (min-width: 768px) {
+    height: 25vw;
+  }
 `;
 
 export const StarRating = styled.div`
   bottom: 0;
   right: 2vw;
   position: absolute;
+
+  @media screen and (min-width: 768px) {
+    bottom: -3vw;
+    right: 2vw;
+  }
 `;
 
 export const Star = styled.img`
@@ -34,6 +48,10 @@ export const RpTitleDiv = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    height: 8vw;
+  }
 `;
 
 export const RpTitle = styled.h3`
@@ -59,6 +77,7 @@ export const RpDesc = styled.div`
   flex-direction: row;
 
   @media screen and (min-width: 768px) {
+    width: 72%;
   }
 `;
 
@@ -76,6 +95,8 @@ export const RpType = styled.p`
   margin-left: 2vw;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
   }
 `;
 
@@ -90,6 +111,8 @@ export const RpServings = styled.p`
   margin-right: 2vw;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
   }
 `;
 export const RpIngredients = styled.div`
@@ -98,6 +121,7 @@ export const RpIngredients = styled.div`
   margin-left: 2vw;
 
   @media screen and (min-width: 768px) {
+    margin-top: 6vw;
   }
 `;
 
@@ -114,6 +138,28 @@ export const RpiTitle = styled.p`
   color: black;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
+  }
+`;
+
+export const RpdTitle = styled.p`
+  width: 100%;
+  font-family: BalooTamma2-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5vw;
+  line-height: 3.75vw;
+  text-align: left;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  color: black;
+  margin-top: 4vw;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
+    margin-left: 2vw;
   }
 `;
 
@@ -130,6 +176,8 @@ export const RpiList = styled.ul`
   padding: 0;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
   }
 `;
 
@@ -146,6 +194,10 @@ export const RpdList = styled.ul`
   margin-left: 7vw;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
+    width: 60%;
+    margin-left: 3vw;
   }
 `;
 
@@ -161,6 +213,8 @@ export const RpnList = styled.ul`
   margin-left: 5vw;
 
   @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
   }
 `;
 
@@ -170,12 +224,20 @@ export const RpDirections = styled.div`
 
 export const RpNotes = styled.div`
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 72%;
+  }
 `;
 
 export const ButtonBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    width: 72%;
+  }
 `;
 
 export const CookSoloButton = styled.button`

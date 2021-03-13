@@ -18,6 +18,7 @@ import {
   RpServings,
   RpIngredients,
   RpiTitle,
+  RpdTitle,
   RpiList,
   RpDirections,
   RpdList,
@@ -111,7 +112,7 @@ function RecipePage(props) {
             </RpiList>
           </RpIngredients>
           <RpDirections>
-            <RpTitle>Directions</RpTitle>
+            <RpdTitle>Directions</RpdTitle>
             <RpdList>
               {currentRecipe.directions.map((direction) => (
                 <li style={{ marginBottom: "2vw" }}>{direction}</li>
