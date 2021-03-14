@@ -58,6 +58,7 @@ export const ContactFormContainer = styled.div`
     width: 45vw;
     margin-top: -21.5vw;
     margin-left: 50vw;
+    justify-content: start;
   }
 `;
 
@@ -68,6 +69,7 @@ export const ContactForm = styled.form`
   @media screen and (min-width: 768px) {
     height: 15vw;
     width: 40vw;
+    margin-top: 1vw;
   }
 `;
 
@@ -154,5 +156,6 @@ export const SubmitButton = styled.button`
     font-size: 16px;
     line-height: 28px;
     margin-right: 0;
+    margin-top: 0.5vw;
   }
 `;

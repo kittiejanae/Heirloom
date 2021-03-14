@@ -196,7 +196,7 @@ export const RpdList = styled.ul`
   @media screen and (min-width: 768px) {
     font-size: 1.5vw;
     line-height: 1.75vw;
-    width: 60%;
+    width: 65%;
     margin-left: 3vw;
   }
 `;
@@ -270,7 +270,7 @@ export const CookSoloButton = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 14vw;
+    width: auto;
     font-size: 16px;
     line-height: 28px;
     margin-right: 0;
@@ -289,7 +289,7 @@ export const CookAssist = styled.button`
   font-family: BalooTamma2-Regular;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: auto;
   line-height: 22px;
   text-align: center;
   letter-spacing: 0.035em;
@@ -308,7 +308,7 @@ export const CookAssist = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 14vw;
+    width: auto;
     font-size: 16px;
     line-height: 28px;
     margin-right: 0;
@@ -322,6 +322,10 @@ export const LockDiv = styled.div`
   flex-direction: column;
   margin-top: 5vw;
   margin-bottom: 5vw;
+
+  @media screen and (min-width: 768px) {
+    width: 72%;
+  }
 `;
 
 export const RpLocked = styled.p`
@@ -334,9 +338,18 @@ export const RpLocked = styled.p`
   letter-spacing: 0.035em;
   text-transform: uppercase;
   color: black;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5vw;
+    line-height: 1.75vw;
+  }
 `;
 
 export const LockImage = styled.img`
   width: 30vw;
   height: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 15vw;
+  }
 `;

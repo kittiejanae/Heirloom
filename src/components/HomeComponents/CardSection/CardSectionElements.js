@@ -37,7 +37,7 @@ export const FeatureH2 = styled.h2`
   font-size: 7vw;
   line-height: 7.5vw;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     font-size: 5vw;
     line-height: 5.5vw;
     margin-left: 3.5vw;
@@ -73,7 +73,7 @@ export const FeatureWrapper = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: column;
     width: 25%;
-    height: 25vw;
+    height: 27vw;
   }
 `;
 
@@ -97,18 +97,18 @@ export const FeatureP = styled.p`
   font-family: Baloo Tamma 2;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 28px;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
   text-align: center;
   letter-spacing: 0.035em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  padding: 0.5vw;
 
   @media screen and (min-width: 768px) {
-    width: 90%;
-    height: 40%;
-    font-size: 16px;
-    line-height: 32px;
+    width: 94%;
+    font-size: 1.5vw;
+    line-height: 1.8vw;
   }
 `;

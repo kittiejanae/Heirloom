@@ -87,7 +87,10 @@ const recipes = [
       "Put some eggs soboro on the left surface on the vinegared rice. Next put some chicken soboro on the right on the vinegared rice.",
       "Place inarizushi on the plate.",
     ],
-    notes: [""],
+    notes: [
+      "Strain some of Yoshino Secret Umami-Loaded Supreme Chicken Stock for a dynamic flavor",
+      "Make some of Megumi's Famous Apple Butter and add it to the chicken soboro!",
+    ],
   },
   {
     id: 3,
@@ -143,7 +146,9 @@ const recipes = [
       "Cook ramen noodles, and top with mapo tofu, meatball sauce, green onions, and Lion’s Head meatball.",
       "Slice open the meatball and watch the curry flow out…",
     ],
-    notes: [""],
+    notes: [
+      "Use the meat mixture from our family Hujiao Bing recipe for the meatballs.",
+    ],
   },
   {
     id: 4,

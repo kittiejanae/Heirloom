@@ -15,6 +15,7 @@ const CategoryPage = ({ filteredList, catTitle }) => {
           {filteredList.map((recipe) => (
             <RecipeCard
               key={recipe.id}
+              id={recipe.id}
               recipe={recipe}
               title={recipe.title}
               recipeImg={recipe.recipeImg}
@@ -22,6 +23,7 @@ const CategoryPage = ({ filteredList, catTitle }) => {
               starRating={recipe.starRating}
               servingSize={recipe.servingSize}
               source={recipe.source}
+              locked={recipe.locked}
             />
           ))}
         </CategoryContainer>

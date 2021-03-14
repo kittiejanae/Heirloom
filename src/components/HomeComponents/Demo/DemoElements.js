@@ -135,7 +135,7 @@ export const MobileDemoBtn = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 14vw;
+    width: auto;
     font-size: 16px;
     line-height: 28px;
   }
@@ -169,7 +169,7 @@ export const DesktopDemoBtn = styled(Link)`
   }
 
   @media screen and (min-width: 768px) {
-    width: 14vw;
+    width: auto;
     font-size: 16px;
     line-height: 28px;
   }
